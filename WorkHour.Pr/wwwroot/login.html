@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .fontAwesome {
+            font-family: 'Helvetica', FontAwesome, sans-serif;
+        }
+        body {
+            font-family: Arial;
+            color:darkslategrey;
+            background: #9053c7;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+            background: white;
+            border-radius: 8px;
+            width: 50%;
+            align-items: center;
+            max-width: 500px;
+          
+            margin-left:400px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: "center";
+            border-radius: 25px;
+        }
+
+     
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 25px;
+        }
+
+            button:hover {
+                opacity: 0.8;
+            }
+        .middle {
+            margin-top:110px;
+            margin-left:300px;
+            margin-right:300px;
+            padding: 100px 50px;
+            background: white;
+            border-radius: 25px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="middle">
+        <img src="images/logo.png" alt="Alternate Text " />
+        <h2 style="text-align:center;margin-left:380px">Arge 24 Giriş</h2>
+        <form action="/" method="post">
+            <div class="input-container">
+                <input class="fontAwesome" type="text" placeholder="&#xf0e0;" name="usrnm">
+            </div>
+            <div class="input-container">
+                <input class="fontAwesome" type="password" placeholder="&#xf13e;" name="psw">
+            </div>
+           
+
+            <button type="submit" onclick="check(this.form)" >GİRİŞ</button>
+
+        </form>
+    </div>
+    <script language="javascript">
+        function check(form)/*function to check userid & password*/
+        {
+         /*the following code checkes whether the entered userid and password are matching*/
+         if(form.usrnm.value == "nina" && form.psw.value == "1")
+          {
+            window.open('index.html')/*opens the target page while Id & password matches*/
+          }
+         else
+         {
+           alert("Error Password or Username")/*displays error message*/
+          }
+        }
+    </script>
+</body>
+</html>

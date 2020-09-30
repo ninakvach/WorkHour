@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            float: left;
+            width: 50%;
+        }
+
+            button:hover {
+                opacity: 1;
+            }
+        .cancelbtn {
+            padding: 14px 20px;
+            background-color: #f44336;
+        }
+
+        input[type=text], input[type=password], input[type=tel] {
+            width: 90%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        form {
+            border: 3px solid #f1f1f1;
+            background: white;
+            border-radius: 8px;
+            width: 50%;
+            align-items: center;
+            max-width: 400px;
+            margin-left: 500px;
+        }
+
+    </style>
+</head>
+<body>
+   
+
+    <form action="/" method="post">
+
+        <div class="container">
+            <h2>Profil</h2>
+            <hr>
+            <div class="private">
+                <label for="name"><b>Ad-Soyad</b></label>
+                <input type="text" name="email" disabled>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" name="email" disabled>
+
+                <label for="number"><b>Telefon Numarası</b></label>
+                <input type="tel" name="number" disabled>
+
+                <label for="adres"><b>Adresi</b></label>
+                <input type="text" name="adres" disabled>
+            </div>
+                <label for="psw"><b>Şifre</b></label>
+                <input type="password" name="psw" required>
+
+                <label for="psw-new"><b>Yeni Şifre</b></label>
+                <input type="password" name="psw-new" required>
+
+                <label for="psw-repeat"><b>Yeni Şifre Tekrar</b></label>
+                <input type="password" name="psw-repeat" required>
+
+                <button class="cancelbtn"> Vazgeç</button>
+                <button> Kaydet</button>
+            </div>
+</form>
+</body>
+</html>

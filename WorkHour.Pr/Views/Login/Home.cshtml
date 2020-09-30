@@ -1,0 +1,196 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ARGE 24</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        header {
+            padding: 20px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 207px;
+            position: fixed;
+            z-index: 1;
+            top: 80px;
+            left: 0;
+            border: 1px solid lightgray;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+            .sidenav a, .dropdown-btn {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 16px;
+                color: #212529;
+                display: block;
+                border: none;
+                background: none;
+                width: 100%;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+                font-family: Arial;
+            }
+
+                .sidenav a:hover, .dropdown-btn:hover {
+                    color: #818181;
+                }
+
+        .main {
+            margin-left: 200px;
+            padding: 0px 10px;
+        }
+
+        .dropdown-container {
+            display: none;
+            padding-left: 8px;
+        }
+
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+
+
+        .dropdown {
+            float: right;
+            position: relative;
+            display: inline-block;
+            padding-right: 60px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 80px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            font-family: Arial;
+            text-align: center;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        .background {
+            margin-left: 200px;
+            background-image: url('/../images/pic.png');
+            background-repeat: no-repeat;
+            width: auto;
+            height: 660px;
+            background-position: 50% 50%;
+        }
+
+        .btn-seeinfo:hover {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="@Url.Action("Restore", null, new { area = string.Empty, controller = "Login" })">
+            <img src="~/images/logo.png" alt="HTML5 Icon" style="width:115px;height:33px;" />
+        </a>
+        <a class="btn btn-seeinfo">
+            <i class="fa fa-navicon" style="font-size:20px; padding-left:35px"></i>
+        </a>
+        <div class="dropdown">
+            <i class="fa fa-user-circle" style="font-size:28px; float: right"></i>
+            <div class="dropdown-content">
+                <a href="profil.html">Profile</a>
+                <a href="@Url.Action("Index", null, new { area = string.Empty, controller = "Login" })"> 
+                Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">
+            <i style="padding-right:9px" class="fa fa-users"></i>
+            Persons
+
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="@Url.Action("Index", null, new { area = string.Empty, controller = "Personel" })">Persons Managment</a>
+            <a href="#">Authority Managment</a>
+        </div>
+        <button class="dropdown-btn">
+            <i style="padding-right:9px" class="fa fa-pencil-square"></i>
+            Shift
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Shift Managment</a>
+            <a href="#">Report</a>
+        </div>
+        <button class="dropdown-btn">
+            <i style="padding-right:9px" class="fa fa-book"></i>
+           Manage Customer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Project Definition</a>
+            <a href="#">Customer Definition</a>
+        </div>
+        <button class="dropdown-btn">
+            <i style="padding-right:9px" class="fa fa-map"></i>
+           Job Description
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Work Managment</a>
+        </div>
+    </div>
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <div class="background">
+    </div>
+    @*  *@
+</body>
+</html>
